@@ -3,6 +3,10 @@
 This repository contains the official implementation of ECC-AHT, a sequential
 active hypothesis testing algorithm for correlated combinatorial anomaly detection.
 
+## 📰 News
+
+- **[1/24/2026]** Code and experiments released
+
 ## ⭐ Overview
 
 ECC-AHT addresses the problem of identifying a small set of anomalous streams under
