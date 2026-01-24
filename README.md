@@ -81,3 +81,11 @@ All experiments from the paper can be reproduced using scripts
   ```bash
   python run_experiments_spectral_rank.py
   ```
+
+## 📧 Contact
+
+**Authors:**
+- Zichuan Yang ([2153747@tongji.edu.cn](mailto:2153747@tongji.edu.cn))
+- Yiming Xing ([yimingx4@tongji.edu.cn](mailto:yimingx4@tongji.edu.cn))
+
+**Questions?** Open an [issue](https://github.com/VincentdeCristo/ECC-AHT/issues) or email us!
