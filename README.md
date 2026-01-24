@@ -15,6 +15,10 @@ correlated Gaussian noise. The algorithm combines:
 This allows ECC-AHT to achieve information-theoretically optimal rates while remaining
 computationally efficient for large-scale systems.
 
+## 📄 License
+
+This project is licensed under the [MIT License](https://github.com/VincentdeCristo/ECC-AHT/blob/main/LICENSE).
+
 ## 🚀 Quick Start
 
 ### 🧪 Configure environment
