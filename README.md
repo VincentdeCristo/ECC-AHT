@@ -1,12 +1,14 @@
 # Active Hypothesis Testing for Correlated Combinatorial Anomaly Detection
 
+[![Paper](https://img.shields.io/badge/arXiv-2601.17430-red?logo=arxiv)](https://arxiv.org/abs/2601.17430)
+[![Paper](https://img.shields.io/badge/Hugging%20Face-paper-yellow?logo=huggingface)](https://huggingface.co/papers/2601.17430)
+
 This repository contains the official implementation of ECC-AHT, a sequential
 active hypothesis testing algorithm for correlated combinatorial anomaly detection.
 
-[![Paper](https://img.shields.io/badge/arXiv-26.1-red?logo=arxiv)](https://arxiv.org/abs/2601.17430)
-
 ## 📰 News
 
+- **[1/26/2026]** Preprint available on arXiv
 - **[1/24/2026]** Code and experiments released
 
 ## ⭐ Overview
@@ -98,3 +100,18 @@ All experiments from the paper can be reproduced using scripts
 - Yiming Xing ([yimingx4@tongji.edu.cn](mailto:yimingx4@tongji.edu.cn))
 
 **Questions?** Open an [issue](https://github.com/VincentdeCristo/ECC-AHT/issues) or email us!
+
+## 📖 Citation
+
+If you use this code in your research, please cite:
+```bibtex
+@misc{yang2026activehypothesistestingcorrelated,
+      title={Active Hypothesis Testing for Correlated Combinatorial Anomaly Detection}, 
+      author={Zichuan Yang and Yiming Xing},
+      year={2026},
+      eprint={2601.17430},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2601.17430}, 
+}
+```
