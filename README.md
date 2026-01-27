@@ -1,8 +1,9 @@
 # Active Hypothesis Testing for Correlated Combinatorial Anomaly Detection
 
 <div align="center">
-[![Paper](https://img.shields.io/badge/arXiv-2601.17430-red?logo=arxiv)](https://arxiv.org/abs/2601.17430)
-[![Paper](https://img.shields.io/badge/Hugging%20Face-paper-yellow?logo=huggingface)](https://huggingface.co/papers/2601.17430)
+
+[![Paper](https://img.shields.io/badge/arXiv-2601.17430-red?logo=arxiv)](https://arxiv.org/abs/2601.17430) [![Paper](https://img.shields.io/badge/Hugging%20Face-paper-yellow?logo=huggingface)](https://huggingface.co/papers/2601.17430)
+
 </div>
 
 This repository contains the official implementation of ECC-AHT, a sequential
