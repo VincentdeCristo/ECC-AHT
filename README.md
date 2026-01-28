@@ -2,7 +2,9 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/arXiv-2601.17430-red?logo=arxiv)](https://arxiv.org/abs/2601.17430)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Paper](https://img.shields.io/badge/Hugging%20Face-paper-yellow?logo=huggingface)](https://huggingface.co/papers/2601.17430)
+[![Paper](https://img.shields.io/badge/arXiv-2601.17430-red?logo=arxiv)](https://arxiv.org/abs/2601.17430)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![Paper](https://img.shields.io/badge/Hugging%20Face-paper-yellow?logo=huggingface)](https://huggingface.co/papers/2601.17430)
 
 **[Paper](https://arxiv.org/abs/2601.17430)** | **[Hugging Face](https://huggingface.co/papers/2601.17430)**
 
