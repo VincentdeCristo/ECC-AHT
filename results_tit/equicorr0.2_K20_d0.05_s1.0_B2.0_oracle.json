@@ -1,0 +1,22 @@
+{
+  "sigma": "equicorr",
+  "rho": 0.2,
+  "K": 20,
+  "n": 2,
+  "B": 2.0,
+  "signal": 1.0,
+  "delta": 0.05,
+  "seeds": 20,
+  "method": "oracle",
+  "s_star": [
+    0,
+    1
+  ],
+  "gamma_star": 0.3472222220257936,
+  "rank_W": 1,
+  "mean_tau": 86.6,
+  "err_rate": 0.0,
+  "timeouts": 0,
+  "ratio": 10.037427140229992,
+  "err_within_delta": true
+}

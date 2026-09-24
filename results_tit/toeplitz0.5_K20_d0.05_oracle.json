@@ -1,0 +1,21 @@
+{
+  "sigma": "toeplitz",
+  "rho": 0.5,
+  "K": 20,
+  "n": 2,
+  "B": 2.0,
+  "delta": 0.05,
+  "seeds": 20,
+  "method": "oracle",
+  "s_star": [
+    0,
+    1
+  ],
+  "gamma_star": 0.39023161236632,
+  "rank_W": 2,
+  "mean_tau": 277.3,
+  "err_rate": 0.0,
+  "timeouts": 0,
+  "ratio": 36.121794682541505,
+  "err_within_delta": true
+}

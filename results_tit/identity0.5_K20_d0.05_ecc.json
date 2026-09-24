@@ -1,0 +1,21 @@
+{
+  "sigma": "identity",
+  "rho": 0.5,
+  "K": 20,
+  "n": 2,
+  "B": 2.0,
+  "delta": 0.05,
+  "seeds": 30,
+  "method": "ecc",
+  "s_star": [
+    0,
+    1
+  ],
+  "gamma_star": 0.27777777777780993,
+  "rank_W": 1,
+  "mean_tau": 117.93333333333334,
+  "err_rate": 0.0,
+  "timeouts": 0,
+  "ratio": 10.935309389446562,
+  "err_within_delta": true
+}

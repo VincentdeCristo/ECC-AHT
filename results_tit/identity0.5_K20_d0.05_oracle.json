@@ -1,0 +1,22 @@
+{
+  "sigma": "identity",
+  "rho": 0.5,
+  "K": 20,
+  "n": 3,
+  "B": 2.0,
+  "delta": 0.05,
+  "seeds": 20,
+  "method": "oracle",
+  "s_star": [
+    0,
+    1,
+    2
+  ],
+  "gamma_star": 0.19607843137345463,
+  "rank_W": 1,
+  "mean_tau": 165.8,
+  "err_rate": 0.0,
+  "timeouts": 0,
+  "ratio": 10.85203915206706,
+  "err_within_delta": true
+}
