@@ -86,7 +86,7 @@ def main():
     names = {'ecc':'ECC-AHT','simple_diff':'Plain contrast', 'coordinate':'Uniform coordinates',
              'random_pair':'Random pair','no_exploration':'No exploration'}
     lines = [r'\begin{table*}[t]',r'\centering\footnotesize',
-             r'\caption{Sensing and exploration ablations: $K=20$, $n=2$, $S^\star=\{1,2\}$, $\delta=.05$, 300 trials per row. All rows use the same exact stopping rule. Timeouts are counted at 5000 observations.}',
+             r'\caption{Each sensing and exploration ablation uses 300 trials with $K=20$, $n=2$, $S^\star=\{1,2\}$, and $\delta=.05$. All rows use the same exact stopping rule. We count a timeout when a run reaches 5000 observations without a decision.}',
              r'\label{tab:algorithm1-ablation}',r'\begin{tabular}{llrrr}',r'\toprule',
              r'Covariance & Sensing policy & Mean $\tau$ (SE) & Errors & Timeouts\\',r'\midrule']
     for row in cases:
