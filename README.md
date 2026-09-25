@@ -80,11 +80,13 @@ the exact maximum-likelihood subset and must beat every alternative by
 stopped-only sample summaries, the exact SDP rate, normalized sample size, and
 a one-sided 95% Clopper--Pearson error bound.
 
-### 📐 Fixed-confidence protocol experiments
+### 📐 Legacy fixed-confidence re-analysis scripts
 
-These scripts re-run every experiment under a single fixed-confidence protocol
-(target error probability fixed in advance, stopping time measured) and report
-the exact SDP rate `Gamma*` rather than a searched lower bound.
+The scripts below were used to audit and re-express experiments from the earlier
+implementation under fixed-confidence metrics. They retain legacy sensing or
+inference components and do not implement the revised theorem or Algorithm 1.
+Use `revised_fixed_confidence.py` above for results claimed for the revised
+procedures. The older scripts remain available for traceability.
 
 - **Figure 2** — rate law and its cost (3 panels)
 
@@ -112,7 +114,7 @@ the exact SDP rate `Gamma*` rather than a searched lower bound.
   python lower_bound_check.py
   ```
 
-- **WaDi** real-world evaluation under the fixed-confidence protocol
+- **WaDi** legacy real-data diagnostic (not used as validation in the revised paper)
 
   ```bash
   python wadi_fc.py
