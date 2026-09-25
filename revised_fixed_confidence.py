@@ -2,7 +2,7 @@
 
 This module intentionally enumerates all hypotheses.  It implements the
 non-oracle two-stage construction used in the achievability theorem, the
-verified ECC-AHT heuristic, and an oracle-design reference.  Every reported
+ECC-AHT algorithm, and an oracle-design reference.  Every reported
 decision uses exact subset likelihoods and the same all-alternative boundary.
 """
 
@@ -136,6 +136,14 @@ def observe(
     return float(rng.normal(float(c @ true_mean), math.sqrt(variance)))
 
 
+def ecc_pair(scores: np.ndarray, n: int) -> tuple[int, int]:
+    """Algorithm 1's champion/challenger, with deterministic stable ties."""
+    ranking = np.argsort(-scores, kind="stable")
+    selected, rejected = ranking[:n], ranking[n:]
+    return (int(selected[np.argmin(scores[selected])]),
+            int(rejected[np.argmax(scores[rejected])]))
+
+
 def run_trial(
     method: str,
     sigma: np.ndarray,
@@ -218,17 +226,13 @@ def run_trial(
                     "correct": bool(decision == true_index),
                 }
 
-    elif method == "verified_ecc":
+    elif method in {"ecc", "verified_ecc"}:
         while t < max_steps:
             if rng.random() < eta:
                 c = np.zeros(K)
                 c[int(rng.integers(K))] = budget
             else:
-                ranking = np.argsort(-pseudo_scores, kind="stable")
-                selected = ranking[:n]
-                rejected = ranking[n:]
-                i = int(selected[np.argmin(pseudo_scores[selected])])
-                j = int(rejected[np.argmax(pseudo_scores[rejected])])
+                i, j = ecc_pair(pseudo_scores, n)
                 d = np.zeros(K)
                 d[i], d[j] = signal, -signal
                 c = np.linalg.solve(sigma, d)
@@ -298,7 +302,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--K", type=int, default=4)
     parser.add_argument("--n", type=int, default=2)
-    parser.add_argument("--methods", default="two_stage,verified_ecc,oracle_design")
+    parser.add_argument("--methods", default="two_stage,ecc,oracle_design")
     parser.add_argument("--deltas", default="0.1,0.05,0.01")
     parser.add_argument("--covariances", default="identity,toeplitz")
     parser.add_argument("--rho", type=float, default=0.5)
@@ -321,7 +325,7 @@ def main() -> None:
     methods = parse_csv(args.methods)
     deltas = parse_csv(args.deltas, float)
     covariance_names = parse_csv(args.covariances)
-    allowed_methods = {"two_stage", "verified_ecc", "oracle_design"}
+    allowed_methods = {"two_stage", "ecc", "verified_ecc", "oracle_design"}
     if not set(methods) <= allowed_methods or any(not 0 < d < 0.5 for d in deltas):
         parser.error("invalid method or delta")
 

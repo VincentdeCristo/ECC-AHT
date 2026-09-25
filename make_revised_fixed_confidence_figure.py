@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", nargs="?", default="results_revised/rate_tail.json")
+    parser.add_argument("input", nargs="?", default="results_revised/rate_tail.json.gz")
     parser.add_argument("--out", default="results_revised/fig_revised_rate.pdf")
     args = parser.parse_args()
 
@@ -25,11 +25,14 @@ def main() -> None:
             data = json.load(handle)
     else:
         data = json.loads(input_path.read_text(encoding="utf-8"))
+    for row in data['aggregates'] + data['trials']:
+        if row['method'] == 'ecc':
+            row['method'] = 'verified_ecc'  # archived result-key compatibility
     methods = ["oracle_design", "two_stage", "verified_ecc"]
     labels = {
         "oracle_design": "oracle design",
         "two_stage": "two-stage",
-        "verified_ecc": "verified ECC-AHT",
+        "verified_ecc": "ECC-AHT",
     }
     colors = {"oracle_design": "#444444", "two_stage": "#0072B2", "verified_ecc": "#D55E00"}
     covariance_names = list(data["design_diagnostics"])

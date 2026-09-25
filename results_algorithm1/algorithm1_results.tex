@@ -1,0 +1,31 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Sensing and exploration ablations: $K=20$, $n=2$, $S^\star=\{1,2\}$, $\delta=.05$, 300 trials per row. All rows use the same exact stopping rule. Timeouts are counted at 5000 observations.}
+\label{tab:algorithm1-ablation}
+\begin{tabular}{llrrr}
+\toprule
+Covariance & Sensing policy & Mean $\tau$ (SE) & Errors & Timeouts\\
+\midrule
+$I$ & ECC-AHT & 112.69 (2.78) & 0 & 0\\
+$I$ & Plain contrast & 112.69 (2.78) & 0 & 0\\
+$I$ & Uniform coordinates & 384.87 (6.73) & 0 & 0\\
+$I$ & Random pair & 355.69 (6.31) & 0 & 0\\
+$I$ & No exploration & 104.35 (2.63) & 0 & 0\\
+Equicorr$(0.9)$ & ECC-AHT & 13.90 (0.48) & 0 & 0\\
+Equicorr$(0.9)$ & Plain contrast & 13.90 (0.48) & 0 & 0\\
+Equicorr$(0.9)$ & Uniform coordinates & 390.49 (6.73) & 1 & 0\\
+Equicorr$(0.9)$ & Random pair & 53.01 (1.03) & 0 & 0\\
+Equicorr$(0.9)$ & No exploration & 11.78 (0.40) & 0 & 0\\
+Toeplitz$(0.5)$ & ECC-AHT & 185.54 (4.95) & 1 & 0\\
+Toeplitz$(0.5)$ & Plain contrast & 102.46 (2.59) & 0 & 0\\
+Toeplitz$(0.5)$ & Uniform coordinates & 395.81 (7.74) & 0 & 0\\
+Toeplitz$(0.5)$ & Random pair & 333.11 (6.08) & 0 & 0\\
+Toeplitz$(0.5)$ & No exploration & 193.01 (5.58) & 1 & 0\\
+Toeplitz$(0.9)$ & ECC-AHT & 67.31 (1.78) & 0 & 0\\
+Toeplitz$(0.9)$ & Plain contrast & 52.68 (1.38) & 0 & 0\\
+Toeplitz$(0.9)$ & Uniform coordinates & 396.50 (7.24) & 0 & 0\\
+Toeplitz$(0.9)$ & Random pair & 151.88 (2.86) & 0 & 0\\
+Toeplitz$(0.9)$ & No exploration & 65.18 (1.88) & 0 & 0\\
+\bottomrule
+\end{tabular}
+\end{table*}
