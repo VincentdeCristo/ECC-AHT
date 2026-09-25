@@ -27,8 +27,11 @@ correlated Gaussian noise. The algorithm combines:
 - Champion–Challenger hypothesis comparison,
 - scalable pseudo-likelihood inference.
 
-This allows ECC-AHT to achieve information-theoretically optimal rates while remaining
-computationally efficient for large-scale systems.
+The revised theory separates two procedures. An enumerative, non-oracle two-stage
+construction attains the controlled-sensing information rate for fixed finite
+hypothesis families. Verified ECC-AHT uses persistent coordinate exploration and
+exact all-hypothesis likelihood verification; it is delta-correct with finite mean
+stopping time, but no rate-optimality theorem is claimed for this heuristic.
 
 <img width="1135" height="586" alt="image" src="https://github.com/user-attachments/assets/5277dadf-3e11-4660-836e-900366afb464" />
 
@@ -45,6 +48,37 @@ mamba create -n eccaht python=3.12.11
 mamba activate eccaht
 mamba install --file requirements.txt
 ```
+
+### Revised procedures
+
+`revised_fixed_confidence.py` implements the revised theorem and algorithm under
+one exact decision protocol. It enumerates all size-`n` hypotheses, so use small
+`K` unless the resulting combinatorial cost is acceptable.
+
+```bash
+# Quick deterministic smoke run
+python revised_fixed_confidence.py --K 4 --n 2 --s-star 0,3 \
+  --covariances identity --deltas 0.2 --seeds 2 --max-steps 1000 \
+  --out results_revised/smoke.json.gz
+
+# Fixed-confidence and rate sweep used for the revised manuscript
+python revised_fixed_confidence.py --K 4 --n 2 --s-star 0,3 \
+  --covariances identity,toeplitz --rho 0.5 \
+  --deltas 0.1,0.03,0.01,0.003,0.001 --seeds 300 --max-steps 5000 \
+  --out results_revised/main.json.gz
+
+python make_revised_fixed_confidence_figure.py results_revised/rate_tail.json.gz
+
+python -m unittest -v test_revised_fixed_confidence.py
+```
+
+The three methods are `two_stage` (the non-oracle attaining construction),
+`verified_ecc` (the practical heuristic), and `oracle_design` (a diagnostic
+reference that knows the true set only for sensing). Every output decision is
+the exact maximum-likelihood subset and must beat every alternative by
+`log((M-1)/delta)`. JSON output includes raw trials, timeout counts, capped and
+stopped-only sample summaries, the exact SDP rate, normalized sample size, and
+a one-sided 95% Clopper--Pearson error bound.
 
 ### 📐 Fixed-confidence protocol experiments
 
