@@ -61,11 +61,17 @@ python revised_fixed_confidence.py --K 4 --n 2 --s-star 0,3 \
   --covariances identity --deltas 0.2 --seeds 2 --max-steps 1000 \
   --out results_revised/smoke.json.gz
 
-# Fixed-confidence and rate sweep used for the revised manuscript
+# Fixed-confidence coverage table used for the revised manuscript
 python revised_fixed_confidence.py --K 4 --n 2 --s-star 0,3 \
   --covariances identity,toeplitz --rho 0.5 \
-  --deltas 0.1,0.03,0.01,0.003,0.001 --seeds 300 --max-steps 5000 \
-  --out results_revised/main.json.gz
+  --deltas 0.05,0.01 --seeds 3000 --max-steps 5000 \
+  --out results_revised/coverage.json.gz
+
+# Asymptotic-rate figure used for the revised manuscript
+python revised_fixed_confidence.py --K 4 --n 2 --s-star 0,3 \
+  --covariances identity,toeplitz --rho 0.5 \
+  --deltas 1e-3,1e-6,1e-12,1e-24,1e-48 --seeds 300 --max-steps 5000 \
+  --out results_revised/rate_tail.json.gz
 
 python make_revised_fixed_confidence_figure.py results_revised/rate_tail.json.gz
 
